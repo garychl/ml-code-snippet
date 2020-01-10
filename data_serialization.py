@@ -53,9 +53,10 @@ root = tree.getroot()
 
 # loal .yaml
 import yaml
+from pprint import pprint
 
 with open('/path/file.yaml', 'r', newline='') as f:
     try:
-        print(yaml.load(f))
+        pprint(yaml.safe_load(f))
     except yaml.YAMLError as ymlexcp:
-        print(ymlexcp)
+        pprint(ymlexcp)
