@@ -16,6 +16,8 @@ with open('/path/file.csv', newline='') as f:
 #  write to file
 import csv
 
+iterable = range(10)
+
 with open('/path/file.csv', 'w', newline='') as f:
     writer = csv.writer(f)
     writer.writerows(iterable)
