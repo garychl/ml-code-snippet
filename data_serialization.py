@@ -34,13 +34,17 @@ with open('/path/file.json', 'r') as f:
 import pickle
 
 data = {'A': 1, 'B': 2, 'C': 3}
+fw = open('dataFile.pkl','wb')
+# Use dumps to convert the object to a serialized string
+# Use dump to dumps + write to stream write stream
+serial_data = pickle.dump(data, fw)
+fw.close()
 
-#Use dumps to convert the object to a serialized string
-serial_data = pickle.dumps(data)
-
-#Use loads to de-serialize an object
-received_data = pickle.loads(data)
-
+fr = open('dataFile.pkl','rb')
+# Use loads to de-serialize an object
+# Use load to load a file stream
+received_data = pickle.load(fr)
+fr.close()
 ############################## xml ##############################
 
 # loal file
