@@ -20,3 +20,8 @@ If file does not exist, it creates a new file.
 'ab+' append + read binary
 
 """
+
+import glob 
+
+papers_dir = '.'
+docs_path = glob.glob(papers_dir+"*.pdf")
