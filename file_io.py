@@ -25,3 +25,12 @@ import glob
 
 papers_dir = '.'
 docs_path = glob.glob(papers_dir+"*.pdf")
+
+############ Download pdf ############
+import requests
+
+def download_pdf(url):
+    file = requests.get(url, allow_redirects=True)
+    name = url[url.rfind('/')+1:]
+    with open(f'./path_to_save/{name}', 'wb') as out:
+        out.write(file.content)
